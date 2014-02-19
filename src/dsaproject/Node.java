@@ -40,6 +40,6 @@ public class Node {
         array[2]=authorFName;
         array[3]=authorSName;
         return array;
-    
+    //rd yo
     }
 }
