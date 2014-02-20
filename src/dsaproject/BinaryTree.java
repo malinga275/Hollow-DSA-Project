@@ -22,6 +22,7 @@ public class BinaryTree {
         {
         
         root=newNode;
+        flag= true;
         }
     else
         {
@@ -33,6 +34,13 @@ public class BinaryTree {
         
         parent=current;
         int name=title.compareTo(current.title);
+           if(name==0)
+           {
+           flag=false;
+           break;
+           }
+           else
+           {
         if(name<0)
         {
             
@@ -62,8 +70,9 @@ public class BinaryTree {
         flag=false;
         }
         }
-        
         }
+        }
+       
         size++;
     return flag;
     }
@@ -88,6 +97,11 @@ public class BinaryTree {
        
     }
     
+    }
+    
+    public int getSize()
+    {
+    return size;
     }
     
  
