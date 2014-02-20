@@ -103,6 +103,70 @@ public class BinaryTree {
     {
     return size;
     }
-    
+    public boolean deleteNode(String title)
+            {
+	        Node current = root;
+	        Node parent = root;
+	        boolean isItALeftChild = true;
+	        while (current.title != title) {
+	            parent = current;	 
+                    {
+                     int name=title.compareTo(current.title);	 
+	            if (name < 0) {	 
+	                isItALeftChild = true;	 	               	 
+	                current = current.leftChild;	 
+	            } else 
+                    {	 	               	 
+	                isItALeftChild = false;	 	 
+	                current = current.rightChild;	 
+	            }	 	          	 
+	            if (current == null)
+	                return false;	 
+	        }	 	    	 
+	        if (current.leftChild == null && current.rightChild == null) 
+                {	 	 
+	            if (current == root)
+	                root = null;	 	          	 
+	            else if (isItALeftChild)
+	                parent.leftChild = null;	 	       	 
+	            else
+	                parent.rightChild = null;	 
+	        }	 	      	 
+	        else if (current.rightChild == null) 
+                {	 
+	            if (current == root)
+	                root = current.leftChild;	 	            	 
+	            else if (isItALeftChild)
+	                parent.leftChild = current.leftChild;	 	           	 
+	            else
+	                parent.rightChild = current.leftChild;	 
+	        }	 	 
+	        else if (current.leftChild == null) 
+                {	 
+	            if (current == root)
+	                root = current.rightChild;	 	            	 
+	            else if (isItALeftChild)
+	                parent.leftChild = current.rightChild;	 	     	 
+	            else
+	                parent.rightChild = current.rightChild;	 
+	        }	 	       	 
+	        else 
+                {	 
+	            Node replacement = getReplacementNode(current);	 	            	 
+	            if (current == root)
+	                root = replacement;	 	            	 
+	            else if (isItALeftChild)
+	                parent.leftChild = replacement;	 	           	 
+	            else
+	                parent.rightChild = replacement;	 
+	            replacement.leftChild = current.leftChild;	 
+	        }
+	 	size--;
+	        return true;	 
+	    }
+ 
  
 }
+}
+  
+
