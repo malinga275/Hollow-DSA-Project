@@ -104,5 +104,46 @@ public class BinaryTree {
     return size;
     }
     
- 
+ public Node searchbyTitle(String title) {
+  
+  		
+         Node current = root;    // Start at the top of the tree
+	
+	int comp=title.compareTo(current.title); //compare roots tittle to searching title
+  
+         // While we haven't found the Node
+         // keep looking
+
+	 
+         while (comp!= 0) {
+  
+               
+             if (comp < 0) {
+  
+                   
+                 current = current.leftChild; // Shift the current focus to the left child
+
+		 comp=title.compareTo(current.title); //compare current node's tittle to searching title
+  
+             }
+
+		 else {
+  
+                 
+                 current = current.rightChild; // Shift the current focus to the right child
+		 comp=title.compareTo(current.title);  //compare current node's tittle to searching title
+  
+             }
+  
+             // if the node wasn't found
+  
+             if (current == null){
+                 return null;
+  }
+         }
+  
+         return current;
+  
+     }
+    
 }
