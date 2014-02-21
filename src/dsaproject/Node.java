@@ -1,13 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package dsaproject;
 
-/**
- *
- * @author malinga
- */
+
 public class Node {
     
     String title;//this is the key of the tree
@@ -22,7 +16,7 @@ public class Node {
     public Node(String title,int isbn,String authorFName,String authorSName)
     
     {
-    
+    //set users data to node class attributes
     
     this.title=title;
     this.isbn=isbn;
