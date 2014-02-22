@@ -73,70 +73,6 @@ public class BinaryTree {
     
     
     
-    public boolean addNodeByIsbn(String title,int isbn,String authorFName,String authorSName)
-    {
-    boolean flag=false;
-        Node newNode = new Node(title,isbn,authorFName,authorSName);//create a new node
-        
-        if(root==null)//check the tree is empty
-        {
-        
-        root=newNode;//assign new node to root;
-        flag= true;//make true thata new node has been inserted  to tree
-        }
-    else
-        {
-        Node current=root;//assign current node to root
-        Node parent=null;//make parent null
-        
-        while(current!=null)//until current is  a aleaf
-        {
-        
-        parent=current;//assign current to parent
-           if(isbn==current.isbn)//check if the strings are equal
-           {
-           flag=false;//make it false preventing same keys are inseted to tree
-           break;//return from the while loop
-           }
-           else
-           {
-        if(isbn<current.isbn)//check new string is less than current
-        {
-            
-        current=current.leftChild;//assign  current's left node child to currrent
-        if(current==null)//check the current is the leaf
-        {
-        
-        parent.leftChild=newNode;//assign new node to parent's leftchild node
-        flag= true;
-        }
-        
-        }
-        else if(isbn>current.isbn)//check new string is greater than current
-        {
-        
-        current=current.rightChild;//assign  current's right node child to currrent
-         if(current==null)
-        {
-        
-        parent.rightChild=newNode;//assign new node to parent's rightchild node
-        flag= true;
-        }
-         
-        }
-        else
-        {
-        flag=false;
-        }
-        }
-        }
-        }
-       
-        size++;//increment size by one
-    return flag;//return insered or not
-    }
-    
-    
     
     
     public void inOrder()
@@ -174,115 +110,111 @@ public class BinaryTree {
     }
     
     
-    public boolean deleteNode(String title)
+    public boolean deleteNode(String titles)
             {
                   // Start at the top of the tree
 	        Node current = root;
-	        Node parent = root;
+	        Node parent = null;
                 
                 
                   // When searching for a Node this will
          // tell us whether to search to the
          // right or left
                 
-	        boolean isItALeftChild = true;
+	     
                 
                 // While we haven't found the Node
         // keep looking
                 
-                
-	        while (!current.title.equals(title)) 
+                int name=titles.compareTo(current.title);
+               
+	        while (current!=null) 
                 
                 {
+                   if(name<0)
+                   {
+                   
+                       parent=current;
+                       current=current.leftChild;
+                        if(current.title.equals(titles))
+                    {
+                    break;
                     
-	            parent = current;	 
-                     // If we should search to the left
+                    }
+                   }
+                   else if(name>0)
+                   {
+                   
+                       
+                   parent=current;
+                   current=current.rightChild;
+                    if(current.title.equals(titles))
+                    {
+                    break;//element is in the tree pointed by current
                     
-                     int name=title.compareTo(current.title);	 
-	            if (name < 0) {	 
-	                isItALeftChild = true;	
-// Shift the focus Node to the left child                        
-	                current = current.leftChild;	 
-	            } else 
-                    {	 	               	 
-	                isItALeftChild = false;	 
-                         
-                           // Greater than focus node so go to the right
-                        
-                          // Shift the focus Node to the right child
-	                current = current.rightChild;	 
-	            }	 	          	 
-	            if (current == null)
-	                return false;	 
-	        	 
+                    }
+                   }
+                   else
+                   {
+                      break;
+                      
+                   }
                     
-                     // If Node doesn't have children delete it
-	        if (current.leftChild == null && current.rightChild == null) 
-                {	 	 // If root delete it 
-	            if (current == root)
-	                root = null;	
-// If it was marked as a left child
-           // of the parent delete it in its parent
-                    
-	            else if (isItALeftChild)
-	                parent.leftChild = null;	 	       	 
-	            else
-	                parent.rightChild = null;
-                    
-                     // Vice versa for the right child
-	        }
+	           }
+              
+                 
+                if(current==null)
+                {
+                   
+                return false;//element is not in the tree
+                }
                 
-                 // If no right child
-	        else if (current.rightChild == null) 
-                {	 
-	            if (current == root)
-	                root = current.leftChild;
+                
+                //case 1:current has no left children
+                if(current.leftChild==null)
+                {//connect the parent with the right child of the current node
+                if(parent==null)
+                {
+                  
+                root=current.rightChild;
+                }
+                
+                else
+                {
+                    //csase2:the current node has a left child
+                
+                    if(titles.compareTo(parent.title)<0)
+                        parent.leftChild=current.rightChild;
                     
-                    // If focus Node was on the left of parent
-            // move the focus Nodes left child up to the
-            // parent node
+                    else
+                        parent.rightChild=current.rightChild;
+                }
+                }
+                
+                else
+                {
                     
-	            else if (isItALeftChild)
-	                parent.leftChild = current.leftChild;	 	           	 
-	            else
-	                parent.rightChild = current.leftChild;
-                    // Vice versa for the right child
-	        }	 	
-                 // If no left child
-	        else if (current.leftChild == null) 
-                {	 
-	            if (current == root)
-	                root = current.rightChild;
-                    
-                    // If focus Node was on the left of parent
-            // move the focus Nodes right child up to the
-             // parent node
-	            else if (isItALeftChild)
-	                parent.leftChild = current.rightChild;	 	     	 
-	            else
-	                parent.rightChild = current.rightChild;	 
-	        }	 	       	 
-	        else 
-                {	 // Two children so I need to find the deleted nodes
-         // replacement
-	            Node replacement = getReplacementNode(current);	
- // If the focusNode is root replace root
-            // with the replacement                    
-	            if (current == root)
-	                root = replacement;	
-
-                      // If the deleted node was a left child
-            // make the replacement the left child
-	            else if (isItALeftChild)
-	                parent.leftChild = replacement;	 	           	 
-	            else
-	                parent.rightChild = replacement;	 
-	            replacement.leftChild = current.leftChild;	 
-	        }
-	 		 
-	    }
+               Node  parentOfRightMost=current;
+                Node rightMost=current.leftChild;
+                
+                while(rightMost.rightChild!=null)
+                {
+                parentOfRightMost=rightMost;
+                rightMost=rightMost.rightChild;
+                }
+                //replace the element in current by the element in right most
+                current.title=rightMost.title;
+                
+                if(parentOfRightMost.rightChild==rightMost)
+                    parentOfRightMost.rightChild=rightMost.leftChild;
+                
+                else//case3 parentofrightmost==current
+                    parentOfRightMost.leftChild=rightMost.leftChild;
+                }
+                
  size--;
 	        return true;
+                
  
 }
      public Node getReplacementNode(Node replacedNode) {

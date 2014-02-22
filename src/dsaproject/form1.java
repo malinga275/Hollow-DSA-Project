@@ -18,7 +18,6 @@ import javax.swing.JOptionPane;
  */
 public class form1 extends javax.swing.JFrame {
   BinaryTree tree;
-  BinaryTree tree1;
     /** Creates new form form1 */
     public form1() {
         initComponents();
@@ -413,8 +412,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
   else
     {
     boolean check=tree.addNode(title1, isbn1, afn, asn);//call the addnode method to insert data
-    boolean check1=tree1.addNodeByIsbn(title1, isbn1, afn, asn);
-    if(check==true && check1==true)//check book is inserted or not
+    if(check==true)//check book is inserted or not
     {
     
     JOptionPane.showMessageDialog(rootPane, " New Book Node is added to the tree", "Message", JOptionPane.INFORMATION_MESSAGE);
@@ -430,15 +428,11 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
    else 
        size.setText("There are "+siz+" books in the tree now"); 
     }
-    else if (check==false)
+    else
     {
     JOptionPane.showMessageDialog(rootPane, " Book Title is already in  the tree", "Message", JOptionPane.INFORMATION_MESSAGE);
     
     }
-    
-    else 
-         JOptionPane.showMessageDialog(rootPane, " ISBN Number is Already in Tree", "Message", JOptionPane.INFORMATION_MESSAGE);
-    
     }
     
     
@@ -459,13 +453,11 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
     tree=new BinaryTree();//create a new tree from the beginig
-    tree1=new BinaryTree();
     // TODO add your handling code here:
 }//GEN-LAST:event_formWindowOpened
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-try
-{
+
     area.setText(null);
     String titles=title1.getText();
 int si=tree.getSize();
@@ -512,15 +504,9 @@ else
    }
 }  }
 
-}
-catch(NullPointerException f)
-{
- JOptionPane.showMessageDialog(rootPane, "Record not found", "Message", JOptionPane.ERROR_MESSAGE);
-}
 
-
+    // TODO add your handling code here:
 }//GEN-LAST:event_jButton2ActionPerformed
-
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
