@@ -24,6 +24,10 @@ public class Node {
     this.authorSName=authorSName;
     
     }
+
+    Node(String title, Long bn, String authorFName, String authorSName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public String[] getData()
     {

@@ -1,9 +1,11 @@
 
 package dsaproject;
 
+import java.util.ArrayList;
+
 
 public class BinaryTree {
-    
+    ArrayList<String> list;
     Node root;
     int size=0;
     
@@ -139,31 +141,46 @@ public class BinaryTree {
     
     
     
-    public void inOrder()
-    {
-        inorder(root);
-    
-    
+    public String[] inOrder(String text)
+    { list=new ArrayList<String>();
+        
+       String[] hom= inorder(root,text);
+     
+    return hom;
     }
     
     
     
     
-    public void inorder(Node root)
+    public String[] inorder(Node root,String titles)
     {
+           
     if(root!=null)
     {
-  
-    inorder(root.leftChild);//visit leftchild node
-        
-        System.out.println("Book Title: "+root.title+"\n"+"ISBN No: "+root.isbn+"\n"+"Author First Name: "+root.authorFName+"\n"+"Author SurName: "+root.authorSName+"\n....................\n");//visit parent node
-        
-        inorder(root.rightChild);//visit right child node
+   boolean flag=root.title.contains(titles);
+        if(flag==true)
+        {
+            
+    list.add(root.title);
+   list.add(String.valueOf(root.isbn));
+   list.add(root.authorFName);
+   list.add(root.authorSName);
+        }
+    inorder(root.leftChild,titles);//visit leftchild node
        
-    }
+        
+        //visit parent node
+        
+        inorder(root.rightChild,titles);//visit right child node
+        
+       }
+        System.out.println(list.size());
+   String[] array1=new String[list.size()];
+  list.toArray(array1);
+  
+         return array1;
     
     }
-    
     
     
     
@@ -191,7 +208,7 @@ public class BinaryTree {
         // keep looking
                 
                 
-	        while (!current.title.equals(title)) 
+	        while (current!=null) 
                 
                 {
                     
@@ -361,6 +378,113 @@ public class BinaryTree {
   
          return current;
   }
+     public Node searchbyIsbn(int isbn) {
+  
+  		
+         Node current = root;    // Start at the top of the tree
+	
+	
+         // While we haven't found the Node
+         // keep looking
+
+	 
+        while(isbn!=current.isbn){
+  
+               
+             if (isbn < current.isbn) {
+  
+                   
+                 current = current.leftChild; // Shift the current focus to the left child
+
+		 
+             }
+
+		 else {
+  
+                 
+                 current = current.rightChild; // Shift the current focus to the right child
+
+		 
+             }
+  
+             // if the node wasn't found
+  
+             if (current == null)
+                 return null;
+  
+         }
+  
+         return current;
+  
+     }
+   public String[] searchbyKeyword(String title) {
+  
+       ArrayList<String> list=new ArrayList<String>();
+         Node current = root;    // Start at the top of the tree
+ 
+ int comp=title.compareTo(current.title); //compare roots tittle to searching title
+  if(comp==0)
+  {
+   list.add(current.title);
+   list.add(String.valueOf(current.isbn));
+   list.add(current.authorFName);
+   list.add(current.authorSName);
+    System.out.println(current.title);
+  }
+         // While we haven't found the Node
+         // keep looking
+
+  
+         while (comp!= 0) {
+  
+               
+             if (comp < 0) {
+  
+                   
+                 current = current.leftChild; // Shift the current focus to the left child
+
+ 
+   boolean flag=current.title.contains(title);
+   if(flag==true)
+   {
+   list.add(current.title);
+   list.add(String.valueOf(current.isbn));
+   list.add(current.authorFName);
+   list.add(current.authorSName);
+    System.out.println(current.title);
+   }
+   //compare current node's tittle to searching title
+  
+             }
+
+   else {
+  
+                 
+                 current = current.rightChild; // Shift the current focus to the right child
+
+ //compare current node's tittle to searching title
+   boolean flag=current.title.contains(title);
+   if(flag==true)
+   {
+  list.add(current.title);
+   list.add(String.valueOf(current.isbn));
+   list.add(current.authorFName);
+   list.add(current.authorSName);
+       System.out.println(current.title);
+   }
+             }
+  
+             // if the node wasn't found
+  
+             if (current == null)
+                 return null;
+  
+         }
+  String[] array1=new String[list.size()];
+  list.toArray(array1);
+         return array1;
+  } 
+     
      
 }
   
