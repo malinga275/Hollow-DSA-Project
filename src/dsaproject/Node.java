@@ -1,4 +1,3 @@
-
 package dsaproject;
 
 
@@ -25,7 +24,7 @@ public class Node {
     
     }
 
-    Node(String title, int bn, String authorFName, String authorSName) {
+    Node(String title, int isbn, String authorFName, String authorSName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
