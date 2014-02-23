@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/version13
 package dsaproject;
 
 
@@ -24,6 +27,13 @@ public class Node {
     this.authorSName=authorSName;
     
     }
+<<<<<<< HEAD
+=======
+
+    Node(String title, int isbn, String authorFName, String authorSName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+>>>>>>> origin/version13
     
     public String[] getData()
     {

@@ -1,9 +1,17 @@
 
 package dsaproject;
 
+<<<<<<< HEAD
 
 public class BinaryTree {
     
+=======
+import java.util.ArrayList;
+
+
+public class BinaryTree {
+    ArrayList<String> list;
+>>>>>>> origin/version13
     Node root;
     int size=0;
     
@@ -73,6 +81,7 @@ public class BinaryTree {
     
     
     
+<<<<<<< HEAD
     
     
     public void inOrder()
@@ -80,11 +89,86 @@ public class BinaryTree {
         inorder(root);
     
     
+=======
+    public boolean addNodeByIsbn(String title,int isbn,String authorFName,String authorSName)
+    {
+    boolean flag=false;
+        Node newNode = new Node(title,isbn,authorFName,authorSName);//create a new node
+        
+        if(root==null)//check the tree is empty
+        {
+        
+        root=newNode;//assign new node to root;
+        flag= true;//make true thata new node has been inserted  to tree
+        }
+    else
+        {
+        Node current=root;//assign current node to root
+        Node parent=null;//make parent null
+        
+        while(current!=null)//until current is  a aleaf
+        {
+        
+        parent=current;//assign current to parent
+           if(isbn==current.isbn)//check if the strings are equal
+           {
+           flag=false;//make it false preventing same keys are inseted to tree
+           break;//return from the while loop
+           }
+           else
+           {
+        if(isbn<current.isbn)//check new string is less than current
+        {
+            
+        current=current.leftChild;//assign  current's left node child to currrent
+        if(current==null)//check the current is the leaf
+        {
+        
+        parent.leftChild=newNode;//assign new node to parent's leftchild node
+        flag= true;
+        }
+        
+        }
+        else if(isbn>current.isbn)//check new string is greater than current
+        {
+        
+        current=current.rightChild;//assign  current's right node child to currrent
+         if(current==null)
+        {
+        
+        parent.rightChild=newNode;//assign new node to parent's rightchild node
+        flag= true;
+        }
+         
+        }
+        else
+        {
+        flag=false;
+        }
+        }
+        }
+        }
+       
+        size++;//increment size by one
+    return flag;//return insered or not
     }
     
     
     
     
+    public String[] inOrder(String text)
+    { list=new ArrayList<String>();
+        
+       String[] hom= inorder(root,text);
+     
+    return hom;
+>>>>>>> origin/version13
+    }
+    
+    
+    
+    
+<<<<<<< HEAD
     public void inorder(Node root)
     {
     if(root!=null)
@@ -97,18 +181,51 @@ public class BinaryTree {
         inorder(root.rightChild);//visit right child node
        
     }
+=======
+    public String[] inorder(Node root,String titles)
+    {
+           
+    if(root!=null)
+    {
+   boolean flag=root.title.contains(titles);
+        if(flag==true)
+        {
+            
+    list.add(root.title);
+   list.add(String.valueOf(root.isbn));
+   list.add(root.authorFName);
+   list.add(root.authorSName);
+        }
+    inorder(root.leftChild,titles);//visit leftchild node
+       
+        
+        //visit parent node
+        
+        inorder(root.rightChild,titles);//visit right child node
+        
+       }
+        System.out.println(list.size());
+   String[] array1=new String[list.size()];
+  list.toArray(array1);
+  
+         return array1;
+>>>>>>> origin/version13
     
     }
     
     
     
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> origin/version13
     public int getSize()
     {
     return size;
     }
     
+<<<<<<< HEAD
 <<<<<<< HEAD
  public Node searchbyTitle(String title) {
   
@@ -117,6 +234,8 @@ public class BinaryTree {
 	
 	int comp=title.compareTo(current.title); //compare roots tittle to searching title
 =======
+=======
+>>>>>>> origin/version13
     
     public boolean deleteNode(String title)
             {
@@ -135,7 +254,11 @@ public class BinaryTree {
         // keep looking
                 
                 
+<<<<<<< HEAD
 	        while (!current.title.equals(title)) 
+=======
+	        while (current!=null) 
+>>>>>>> origin/version13
                 
                 {
                     
@@ -270,16 +393,23 @@ public class BinaryTree {
          Node current = root;    // Start at the top of the tree
  
  int comp=title.compareTo(current.title); //compare roots tittle to searching title
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> origin/version13
   
          // While we haven't found the Node
          // keep looking
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	 
 =======
   
 >>>>>>> master
+=======
+  
+>>>>>>> origin/version13
          while (comp!= 0) {
   
                
@@ -288,6 +418,7 @@ public class BinaryTree {
                    
                  current = current.leftChild; // Shift the current focus to the left child
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		 comp=title.compareTo(current.title); //compare current node's tittle to searching title
   
@@ -299,6 +430,8 @@ public class BinaryTree {
                  current = current.rightChild; // Shift the current focus to the right child
 		 comp=title.compareTo(current.title);  //compare current node's tittle to searching title
 =======
+=======
+>>>>>>> origin/version13
    comp=title.compareTo(current.title); //compare current node's tittle to searching title
   
              }
@@ -309,12 +442,16 @@ public class BinaryTree {
                  current = current.rightChild; // Shift the current focus to the right child
 
    comp=title.compareTo(current.title);  //compare current node's tittle to searching title
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> origin/version13
   
              }
   
              // if the node wasn't found
   
+<<<<<<< HEAD
 <<<<<<< HEAD
              if (current == null){
                  return null;
@@ -326,6 +463,7 @@ public class BinaryTree {
      }
     
 =======
+=======
              if (current == null)
                  return null;
   
@@ -333,8 +471,121 @@ public class BinaryTree {
   
          return current;
   }
+     public Node searchbyIsbn(int isbn) {
+  
+  		
+         Node current = root;    // Start at the top of the tree
+	
+	
+         // While we haven't found the Node
+         // keep looking
+
+	 
+        while(isbn!=current.isbn){
+  
+               
+             if (isbn < current.isbn) {
+  
+                   
+                 current = current.leftChild; // Shift the current focus to the left child
+
+		 
+             }
+
+		 else {
+  
+                 
+                 current = current.rightChild; // Shift the current focus to the right child
+
+		 
+             }
+  
+             // if the node wasn't found
+  
+>>>>>>> origin/version13
+             if (current == null)
+                 return null;
+  
+         }
+  
+         return current;
+<<<<<<< HEAD
+  }
      
 >>>>>>> master
+=======
+  
+     }
+   public String[] searchbyKeyword(String title) {
+  
+       ArrayList<String> list=new ArrayList<String>();
+         Node current = root;    // Start at the top of the tree
+ 
+ int comp=title.compareTo(current.title); //compare roots tittle to searching title
+  if(comp==0)
+  {
+   list.add(current.title);
+   list.add(String.valueOf(current.isbn));
+   list.add(current.authorFName);
+   list.add(current.authorSName);
+    System.out.println(current.title);
+  }
+         // While we haven't found the Node
+         // keep looking
+
+  
+         while (comp!= 0) {
+  
+               
+             if (comp < 0) {
+  
+                   
+                 current = current.leftChild; // Shift the current focus to the left child
+
+ 
+   boolean flag=current.title.contains(title);
+   if(flag==true)
+   {
+   list.add(current.title);
+   list.add(String.valueOf(current.isbn));
+   list.add(current.authorFName);
+   list.add(current.authorSName);
+    System.out.println(current.title);
+   }
+   //compare current node's tittle to searching title
+  
+             }
+
+   else {
+  
+                 
+                 current = current.rightChild; // Shift the current focus to the right child
+
+ //compare current node's tittle to searching title
+   boolean flag=current.title.contains(title);
+   if(flag==true)
+   {
+  list.add(current.title);
+   list.add(String.valueOf(current.isbn));
+   list.add(current.authorFName);
+   list.add(current.authorSName);
+       System.out.println(current.title);
+   }
+             }
+  
+             // if the node wasn't found
+  
+             if (current == null)
+                 return null;
+  
+         }
+  String[] array1=new String[list.size()];
+  list.toArray(array1);
+         return array1;
+  } 
+     
+     
+>>>>>>> origin/version13
 }
   
 
