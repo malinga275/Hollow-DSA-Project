@@ -64,6 +64,12 @@ public class form1 extends javax.swing.JFrame {
         area = new javax.swing.JTextArea();
         jToolBar6 = new javax.swing.JToolBar();
         jPanel6 = new javax.swing.JPanel();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
+        jLabel8 = new javax.swing.JLabel();
+        title2 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        area1 = new javax.swing.JTextArea();
         jToolBar3 = new javax.swing.JToolBar();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -240,15 +246,54 @@ public class form1 extends javax.swing.JFrame {
         jToolBar6.setFloatable(false);
         jToolBar6.setRollover(true);
 
+        jLayeredPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Remove Node", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel8.setText("Book ISBN:");
+        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel8.setBounds(10, 60, 120, 17);
+        jLayeredPane3.add(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        title2.setFont(new java.awt.Font("Georgia", 1, 14));
+        title2.setBounds(100, 60, 360, 23);
+        jLayeredPane3.add(title2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jButton7.setFont(new java.awt.Font("Georgia", 1, 14));
+        jButton7.setText("Remove");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jButton7.setBounds(10, 130, 110, 50);
+        jLayeredPane3.add(jButton7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        area1.setColumns(20);
+        area1.setFont(new java.awt.Font("Georgia", 1, 14));
+        area1.setForeground(new java.awt.Color(0, 0, 204));
+        area1.setRows(5);
+        jScrollPane4.setViewportView(area1);
+
+        jScrollPane4.setBounds(10, 195, 570, 100);
+        jLayeredPane3.add(jScrollPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 614, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 441, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         jToolBar6.add(jPanel6);
@@ -410,12 +455,12 @@ public class form1 extends javax.swing.JFrame {
         jToolBar4.setFloatable(false);
         jToolBar4.setRollover(true);
 
-        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14));
         jLabel7.setText("Keyword:");
 
-        txt.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        txt.setFont(new java.awt.Font("Georgia", 1, 14));
 
-        tabl.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        tabl.setFont(new java.awt.Font("Georgia", 1, 14));
         tabl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -426,7 +471,7 @@ public class form1 extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tabl);
 
-        jButton4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Georgia", 1, 14));
         jButton4.setText("Seatch");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -434,7 +479,7 @@ public class form1 extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Georgia", 1, 14));
         jButton5.setText("Print");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -447,7 +492,7 @@ public class form1 extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(445, Short.MAX_VALUE)
+                .addContainerGap(431, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(121, 121, 121))
             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -604,26 +649,27 @@ if(titles.equals(""))//check user type a something or not
 else
 {
    boolean flag= tree.deleteNode(titles.toLowerCase());//call the deletenode in binarytree class
-    
+    Node search=tree1.searchbyTitle(titles.toLowerCase());
+    tree1.deleteNodeByISBN(search.isbn);
    if(flag==true)//check book is removed or not
    {
     JOptionPane.showMessageDialog(rootPane, " Node is removed sucessfully", "Message", JOptionPane.INFORMATION_MESSAGE);
    int siz=tree.getSize();//get the size of the tree
    if(siz>1)
    {
-       area.append("there are "+ siz +" books in the tree now\n");//put some text in the text area
-    area.append("there were "+ ++siz +" books in the tree \n");//put some text in the text area
+       area.append("there are "+ siz +" books in the database now\n");//put some text in the text area
+    area.append("there were "+ ++siz +" books in the database \n");//put some text in the text area
    
    }
    else if(siz==0)
    {
      area.append("No books in the tree now\n");//put some text in the text area
-   area.append("there was "+ ++siz +" book in the tree now\n");//put some text in the text area
+   area.append("there was "+ ++siz +" book in the database \n");//put some text in the text area
    }
    else
    {
-        area.append("there is "+ siz +" book in the tree now\n");//put some text in the text area
-   area.append("there were "+ ++siz +" books in the tree now\n");//put some text in the text area
+        area.append("there is "+ siz +" book in the database now\n");//put some text in the text area
+   area.append("there were "+ ++siz +" books in the database \n");//put some text in the text area
   
    
    }
@@ -692,7 +738,7 @@ catch(NullPointerException f)
 
          DefaultTableModel dt =(DefaultTableModel)tabl.getModel();
         dt.setRowCount(0);
-        String t=txt.getText();
+        String t=txt.getText().toLowerCase();
         
         if(t.equals(""))
         {
@@ -719,6 +765,7 @@ catch(NullPointerException f)
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        result2.setText(null);
         Node search2=null;
          int tsize=tree1.getSize();//checks the size of the tree
         
@@ -799,6 +846,70 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             
         }
 }//GEN-LAST:event_jButton5ActionPerformed
+
+private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+try
+{
+    int isb=0;
+    area1.setText(null);
+   isb=Integer.parseInt(title2.getText());
+int si=tree.getSize();
+if(si==0)//check if the tree is empty
+{JOptionPane.showMessageDialog(rootPane, " Tree is empty", "Message", JOptionPane.ERROR_MESSAGE);}
+else//otherwise
+{
+if(isb==0)//check user type a something or not
+{
+ JOptionPane.showMessageDialog(rootPane, " Enter Book ISBN Here", "Message", JOptionPane.ERROR_MESSAGE);
+}
+else
+{
+   boolean flag= tree1.deleteNodeByISBN(isb);//call the deletenode in binarytree class
+    Node search=tree.searchbyIsbn(isb);
+    tree.deleteNode(search.title);
+   if(flag==true)//check book is removed or not
+   {
+    JOptionPane.showMessageDialog(rootPane, " Node is removed sucessfully", "Message", JOptionPane.INFORMATION_MESSAGE);
+   int siz=tree.getSize();//get the size of the tree
+   if(siz>1)
+   {
+       area1.append("there are "+ siz +" books in the database now\n");//put some text in the text area
+    area1.append("there were "+ ++siz +" books in the database \n");//put some text in the text area
+   
+   }
+   else if(siz==0)
+   {
+     area1.append("No books in the tree now\n");//put some text in the text area
+   area1.append("there was "+ ++siz +" book in the database \n");//put some text in the text area
+   }
+   else
+   {
+        area1.append("there is "+ siz +" book in the database now\n");//put some text in the text area
+   area1.append("there were "+ ++siz +" books in the database \n");//put some text in the text area
+  
+   
+   }
+  
+   }
+   else
+   {
+   
+   JOptionPane.showMessageDialog(rootPane, "Record not found", "Message", JOptionPane.ERROR_MESSAGE);
+   }
+}  }
+
+}
+catch(NumberFormatException s)
+{
+JOptionPane.showMessageDialog(rootPane, "ISBN must be a number", "Message", JOptionPane.ERROR_MESSAGE);
+}
+catch(NullPointerException f)
+{
+ JOptionPane.showMessageDialog(rootPane, "Record not found", "Message", JOptionPane.ERROR_MESSAGE);
+}
+    
+    // TODO add your handling code here:
+}//GEN-LAST:event_jButton7ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -839,6 +950,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea area;
+    private javax.swing.JTextArea area1;
     private javax.swing.JTextField bisbn;
     private javax.swing.JTextField btitle;
     private javax.swing.JTextField fn;
@@ -849,6 +961,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -856,9 +969,11 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLayeredPane jLayeredPane3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -870,6 +985,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
@@ -887,6 +1003,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JTable tabl;
     private javax.swing.JTextField title;
     private javax.swing.JTextField title1;
+    private javax.swing.JTextField title2;
     private javax.swing.JTextField txt;
     // End of variables declaration//GEN-END:variables
 

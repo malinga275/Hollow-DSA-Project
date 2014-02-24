@@ -145,7 +145,7 @@ public class BinaryTree {
     { list=new ArrayList<String>();
         
        String[] hom= inorder(root,text);
-     
+     list.clear();
     return hom;
     }
     

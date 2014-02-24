@@ -44,22 +44,23 @@ public class page1 extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
 
-        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 1, 36));
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("Book Shop Database");
 
-        jLabel2.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Georgia", 1, 18));
         jLabel2.setText("Developed By:");
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 18));
         jLabel3.setText("HOLLOW");
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\gilbert\\My Documents\\Downloads\\images.jpeg")); // NOI18N
         jLabel4.setBounds(90, 10, 197, 255);
         jLayeredPane1.add(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 0));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 51, 51));
         jButton1.setText("Log In");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
