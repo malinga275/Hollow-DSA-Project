@@ -16,7 +16,7 @@ public class BinaryTree {
         
         if(root==null)//check the tree is empty
         {
-        
+        size++;//increment size by one
         root=newNode;//assign new node to root;
         flag= true;//make true thata new node has been inserted  to tree
         }
@@ -43,7 +43,7 @@ public class BinaryTree {
         current=current.leftChild;//assign  current's left node child to currrent
         if(current==null)//check the current is the leaf
         {
-        
+        size++;//increment size by one
         parent.leftChild=newNode;//assign new node to parent's leftchild node
         flag= true;
         }
@@ -55,7 +55,7 @@ public class BinaryTree {
         current=current.rightChild;//assign  current's right node child to currrent
          if(current==null)
         {
-        
+        size++;//increment size by one
         parent.rightChild=newNode;//assign new node to parent's rightchild node
         flag= true;
         }
@@ -69,7 +69,6 @@ public class BinaryTree {
         }
         }
        
-        size++;//increment size by one
     return flag;//return insered or not
     }
     
@@ -82,7 +81,7 @@ public class BinaryTree {
         
         if(root==null)//check the tree is empty
         {
-        
+        size++;//increment size by one
         root=newNode;//assign new node to root;
         flag= true;//make true thata new node has been inserted  to tree
         }
@@ -108,7 +107,7 @@ public class BinaryTree {
         current=current.leftChild;//assign  current's left node child to currrent
         if(current==null)//check the current is the leaf
         {
-        
+        size++;//increment size by one
         parent.leftChild=newNode;//assign new node to parent's leftchild node
         flag= true;
         }
@@ -120,7 +119,7 @@ public class BinaryTree {
         current=current.rightChild;//assign  current's right node child to currrent
          if(current==null)
         {
-        
+        size++;//increment size by one
         parent.rightChild=newNode;//assign new node to parent's rightchild node
         flag= true;
         }
@@ -134,7 +133,7 @@ public class BinaryTree {
         }
         }
        
-        size++;//increment size by one
+        
     return flag;//return insered or not
     }
     
@@ -174,7 +173,7 @@ public class BinaryTree {
         inorder(root.rightChild,titles);//visit right child node
         
        }
-        System.out.println(list.size());
+        
    String[] array1=new String[list.size()];
   list.toArray(array1);
   
@@ -500,7 +499,7 @@ public class BinaryTree {
    list.add(String.valueOf(current.isbn));
    list.add(current.authorFName);
    list.add(current.authorSName);
-    System.out.println(current.title);
+   
   }
          // While we haven't found the Node
          // keep looking
@@ -522,7 +521,7 @@ public class BinaryTree {
    list.add(String.valueOf(current.isbn));
    list.add(current.authorFName);
    list.add(current.authorSName);
-    System.out.println(current.title);
+   
    }
    //compare current node's tittle to searching title
   
@@ -541,7 +540,7 @@ public class BinaryTree {
    list.add(String.valueOf(current.isbn));
    list.add(current.authorFName);
    list.add(current.authorSName);
-       System.out.println(current.title);
+       
    }
              }
   

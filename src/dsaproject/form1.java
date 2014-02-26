@@ -103,51 +103,51 @@ public class form1 extends javax.swing.JFrame {
             }
         });
 
-        jTabbedPane1.setFont(new java.awt.Font("Georgia", 1, 16));
+        jTabbedPane1.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
 
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
         jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Book Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Author Surname:");
         jLabel1.setBounds(10, 180, 160, 17);
         jLayeredPane1.add(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Book Title:");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel2.setBounds(10, 60, 120, 17);
         jLayeredPane1.add(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("ISBN:");
         jLabel3.setBounds(10, 100, 90, 17);
         jLayeredPane1.add(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Author First Name:");
         jLabel4.setBounds(10, 140, 170, 17);
         jLayeredPane1.add(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        sn.setFont(new java.awt.Font("Georgia", 1, 14));
+        sn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         sn.setBounds(160, 180, 320, 23);
         jLayeredPane1.add(sn, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        title.setFont(new java.awt.Font("Georgia", 1, 14));
+        title.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         title.setBounds(160, 60, 320, 23);
         jLayeredPane1.add(title, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        isbn.setFont(new java.awt.Font("Georgia", 1, 14));
+        isbn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         isbn.setBounds(160, 100, 320, 23);
         jLayeredPane1.add(isbn, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        fn.setFont(new java.awt.Font("Georgia", 1, 14));
+        fn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         fn.setBounds(160, 140, 320, 23);
         jLayeredPane1.add(fn, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("ADD Node");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class form1 extends javax.swing.JFrame {
         jButton1.setBounds(10, 250, 130, 40);
         jLayeredPane1.add(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        size.setFont(new java.awt.Font("Georgia", 1, 18));
+        size.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         size.setForeground(new java.awt.Color(0, 0, 204));
         size.setBounds(10, 340, 580, 40);
         jLayeredPane1.add(size, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -186,24 +186,24 @@ public class form1 extends javax.swing.JFrame {
         jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
 
-        jTabbedPane2.setFont(new java.awt.Font("Georgia", 1, 14));
+        jTabbedPane2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
 
         jToolBar5.setFloatable(false);
         jToolBar5.setRollover(true);
 
         jLayeredPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Remove Node", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Book Title:");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel5.setBounds(10, 60, 120, 17);
         jLayeredPane2.add(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        title1.setFont(new java.awt.Font("Georgia", 1, 14));
+        title1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         title1.setBounds(100, 60, 360, 23);
         jLayeredPane2.add(title1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jButton2.setFont(new java.awt.Font("Georgia", 1, 14));
+        jButton2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButton2.setText("Remove");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +214,7 @@ public class form1 extends javax.swing.JFrame {
         jLayeredPane2.add(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         area.setColumns(20);
-        area.setFont(new java.awt.Font("Georgia", 1, 14));
+        area.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         area.setForeground(new java.awt.Color(0, 0, 204));
         area.setRows(5);
         jScrollPane1.setViewportView(area);
@@ -248,17 +248,17 @@ public class form1 extends javax.swing.JFrame {
 
         jLayeredPane3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Remove Node", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 14))); // NOI18N
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setText("Book ISBN:");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel8.setBounds(10, 60, 120, 17);
         jLayeredPane3.add(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        title2.setFont(new java.awt.Font("Georgia", 1, 14));
+        title2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         title2.setBounds(100, 60, 360, 23);
         jLayeredPane3.add(title2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jButton7.setFont(new java.awt.Font("Georgia", 1, 14));
+        jButton7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButton7.setText("Remove");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,7 +269,7 @@ public class form1 extends javax.swing.JFrame {
         jLayeredPane3.add(jButton7, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         area1.setColumns(20);
-        area1.setFont(new java.awt.Font("Georgia", 1, 14));
+        area1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         area1.setForeground(new java.awt.Color(0, 0, 204));
         area1.setRows(5);
         jScrollPane4.setViewportView(area1);
@@ -281,7 +281,6 @@ public class form1 extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 591, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,7 +288,6 @@ public class form1 extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 441, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,11 +302,11 @@ public class form1 extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
         );
 
         jToolBar2.add(jPanel2);
@@ -318,20 +316,20 @@ public class form1 extends javax.swing.JFrame {
         jToolBar3.setFloatable(false);
         jToolBar3.setRollover(true);
 
-        jTabbedPane3.setFont(new java.awt.Font("Tahoma", 1, 14));
+        jTabbedPane3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setText("Book Title:");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        btitle.setFont(new java.awt.Font("Georgia", 1, 14));
+        btitle.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         btitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btitleActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton3.setText("Search Record");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +339,7 @@ public class form1 extends javax.swing.JFrame {
 
         result.setEditable(false);
         result.setColumns(20);
-        result.setFont(new java.awt.Font("Century Gothic", 1, 13));
+        result.setFont(new java.awt.Font("Century Gothic", 1, 13)); // NOI18N
         result.setRows(5);
         jScrollPane2.setViewportView(result);
 
@@ -377,18 +375,18 @@ public class form1 extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("By Title", jPanel7);
 
-        bisbn.setFont(new java.awt.Font("Georgia", 1, 14));
+        bisbn.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         bisbn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bisbnActionPerformed(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 14));
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setText("Book ISBN:");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        jButton6.setFont(new java.awt.Font("Times New Roman", 1, 18));
+        jButton6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton6.setText("Search Record");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -396,9 +394,9 @@ public class form1 extends javax.swing.JFrame {
             }
         });
 
-        result2.setEditable(false);
         result2.setColumns(20);
-        result2.setFont(new java.awt.Font("Century Gothic", 1, 13));
+        result2.setEditable(false);
+        result2.setFont(new java.awt.Font("Century Gothic", 1, 13)); // NOI18N
         result2.setRows(5);
         jScrollPane5.setViewportView(result2);
 
@@ -438,13 +436,13 @@ public class form1 extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+                .addComponent(jTabbedPane3)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+                .addComponent(jTabbedPane3)
                 .addContainerGap())
         );
 
@@ -455,12 +453,12 @@ public class form1 extends javax.swing.JFrame {
         jToolBar4.setFloatable(false);
         jToolBar4.setRollover(true);
 
-        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14));
+        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel7.setText("Keyword:");
 
-        txt.setFont(new java.awt.Font("Georgia", 1, 14));
+        txt.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
 
-        tabl.setFont(new java.awt.Font("Georgia", 1, 14));
+        tabl.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         tabl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -471,15 +469,15 @@ public class form1 extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tabl);
 
-        jButton4.setFont(new java.awt.Font("Georgia", 1, 14));
-        jButton4.setText("Seatch");
+        jButton4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton4.setText("Search");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Georgia", 1, 14));
+        jButton5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButton5.setText("Print");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -530,11 +528,11 @@ public class form1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 628, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
@@ -837,7 +835,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             else
             {
             
-             JOptionPane.showMessageDialog(rootPane, " printing sucessfull", "Message", JOptionPane.ERROR_MESSAGE);
+             JOptionPane.showMessageDialog(rootPane, " printing sucessfull", "Message", JOptionPane.INFORMATION_MESSAGE);
             }
               
               // TODO add your handling code here:
